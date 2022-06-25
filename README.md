@@ -4,7 +4,7 @@ Kartikey Tiwari
 Harshit panjwani
 Siddharth Bhangale
 
-Problem statement:- Kambrej calling
+Problem statement:- Kamrej calling
 
 Our team has designed a Web application to solve the problem.
 Our project is scalable in future in many ways. we can give it user's outlook or vice-versa.
@@ -27,4 +27,4 @@ And it will direct you to the landing page of the the website
 
 We would like to thank all the event organisers and  mentors for guiding and helping us through our 7 days hackathon journey.
 
-Here is the link for the demo of our website:-
+Here is the link for the demo of our website:- https://drive.google.com/file/d/1hW_6uoXiYIXqaLD6XRBrpc1nApO5EJBO/view?usp=sharing
