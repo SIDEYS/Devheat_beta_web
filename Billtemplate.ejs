@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bill</title>
+</head>
+<style>
+  .page {
+    margin: 15px;
+  }
+
+  .title {
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: underline;
+  }
+
+  .header {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .table {
+    margin: 20px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: large;
+  }
+
+  .right {
+    font-size: large;
+  }
+
+  .space {
+    padding: 5px;
+  }
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 100%;
+  }
+
+  td {
+    border: 1.5px solid black;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .small {
+    width: 15%;
+    font-weight: bold;
+  }
+
+  .large {
+    font-weight: bold;
+  }
+
+  .padding {
+    padding: 2px;
+  }
+
+  .generated-amount {
+    display: inline-block;
+    /* border: 1px solid black; */
+    position: absolute;
+    left: 40vw;
+    /* border-radius: 3%; */
+
+  }
+</style>
+
+<body>
+  <div class="page">
+    <div class="title">Generated Bill</div>
+    <div class="header">
+
+      <div class="right">
+        <div class="space">
+          Kambrej road, near IIIT Surat, kambrej
+        </div>
+        <div class="space">
+          Near IIIT Surat, kambrej.
+        </div>
+        <div class="space">Mobile: 9362522692</div>
+        <div class="space">Email: Pateldadahabha@gmail.com</div>
+        <div class="space">To</div>
+        <div class="space">Name: <%=data.name%>
+        </div>
+        <div class="space">Email: <%=data.email%>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <table>
+        <tr>
+          <td class="small">Menu</td>
+          <td class="small">Price(GST Inc.)</td>
+          <td class="large">Quantity</td>
+          <td class="small">Amount</td>
+        </tr>
+        <%if(parseInt(data.kachori)>0){%>
+          <tr>
+            <td>Kachori</td>
+            <td>Rs. 30</td>
+            <td>
+              <%=parseInt(data.kachori)%>
+            </td>
+            <td> 30 x <%=parseInt(data.kachori)%> = <%=30*parseInt(data.kachori)%>
+            </td>
+          </tr>
+          <%}else{}%>
+            <!-- -- -->
+            <%if(parseInt(data.samosa)>0){%>
+              <tr>
+                <td>Samosa</td>
+                <td>Rs. 15</td>
+                <td>
+                  <%=parseInt(data.samosa)%>
+                </td>
+                <td> 15 x <%=parseInt(data.samosa)%> = <%=15*parseInt(data.samosa)%>
+                </td>
+              </tr>
+              <%}else{}%>
+
+                <!-- -- -->
+                <%if(parseInt(data.dhokla)>0){%>
+                  <tr>
+                    <td>Dhokla</td>
+                    <td>Rs. 40</td>
+                    <td>
+                      <%=parseInt(data.dhokla)%>
+                    </td>
+                    <td> 40 x <%=parseInt(data.dhokla)%> = <%=40*parseInt(data.dhokla)%>
+                    </td>
+                  </tr>
+                  <%}else{}%>
+                    <!-- -- -->
+                    <%if(parseInt(data.kambrejSpecial)>0){%>
+                      <tr>
+                        <td>Kambrej Special</td>
+                        <td>Rs. 60</td>
+                        <td>
+                          <%=parseInt(data.kambrejSpecial)%>
+                        </td>
+                        <td> 60 x <%=parseInt(data.kambrejSpecial)%> = <%=60*parseInt(data.kambrejSpecial)%>
+                        </td>
+                      </tr>
+                      <%}else{}%>
+                        <!-- -- -->
+
+                        <%if(parseInt(data.vadapav)>0){%>
+                          <tr>
+                            <td>Vadapav</td>
+                            <td>Rs. 15</td>
+                            <td>
+                              <%=parseInt(data.vadapav)%>
+                            </td>
+                            <td> 15 x <%=parseInt(data.vadapav)%> = <%=15*parseInt(data.vadapav)%>
+                            </td>
+                          </tr>
+                          <%}else{}%>
+                            <!-- -- -->
+                            <%if(parseInt(data.khaman)>0){%>
+                              <tr>
+                                <td>Khaman</td>
+                                <td>Rs. 30</td>
+                                <td>
+                                  <%=parseInt(data.khaman)%>
+                                </td>
+                                <td> 30 x <%=parseInt(data.khaman)%> = <%=30*parseInt(data.khaman)%>
+                                </td>
+                              </tr>
+                              <%}else{}%>
+                                <!-- -- -->
+                                <%if(parseInt(data.jalebi)>0){%>
+                                  <tr>
+                                    <td>Jalebi</td>
+                                    <td>Rs. 20</td>
+                                    <td>
+                                      <%=parseInt(data.jalebi)%>
+                                    </td>
+                                    <td> 20 x <%=parseInt(data.jalebi)%> = <%=20*parseInt(data.jalebi)%>
+                                    </td>
+                                  </tr>
+                                  <%}else{}%>
+                                    <!-- -- -->
+                                    <%if(parseInt(data.fafda)>0){%>
+                                      <tr>
+                                        <td>Fafda</td>
+                                        <td>Rs. 30</td>
+                                        <td>
+                                          <%=parseInt(data.fafda)%>
+                                        </td>
+                                        <td> 30 x <%=parseInt(data.fafda)%> = <%=30*parseInt(data.fafda)%>
+                                        </td>
+                                      </tr>
+                                      <%}else{}%>
+                                        <!-- -- -->
+                                        <%if(parseInt(data.khandavi)>0){%>
+                                          <tr>
+                                            <td>Khandavi</td>
+                                            <td>Rs. 30</td>
+                                            <td>
+                                              <%=parseInt(data.khandavi)%>
+                                            </td>
+                                            <td> 30 x <%=parseInt(data.khandavi)%> = <%=30*parseInt(data.khandavi)%>
+                                            </td>
+                                          </tr>
+                                          <%}else{}%>
+                                            <!-- -- -->
+                                            <%if(parseInt(data.surtilocha)>0){%>
+                                              <tr>
+                                                <td>Surti Locha</td>
+                                                <td>Rs. 40</td>
+                                                <td>
+                                                  <%=parseInt(data.surtilocha)%>
+                                                </td>
+                                                <td> 40 x <%=parseInt(data.surtilocha)%> =
+                                                    <%=40*parseInt(data.surtilocha)%>
+                                                </td>
+                                              </tr>
+                                              <%}else{}%>
+                                                <!-- -------- -->
+      </table>
+      <div class="generated-amount">
+        <h1>Total Amount(in Rs): <%=30*parseInt(data.kachori) + 15*parseInt(data.samosa) + 40*parseInt(data.dhokla) +
+            60*parseInt(data.kambrejSpecial) + 15*parseInt(data.vadapav) + 30*parseInt(data.khaman) +
+            20*parseInt(data.jalebi) + 30*parseInt(data.fafda) + 30*parseInt(data.khandavi) +
+            30*parseInt(data.surtilocha)%>
+        </h1>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gilda+Display&family=Lato:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@100;300;400;500;600;700;800&family=Potta+One&family=Raleway:wght@100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sen:wght@400;700;800&family=Simonetta:ital@1&family=Varela+Round&display=swap');
+
+body,
+html {
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-image {
+    /* The image used */
+    /* z-index: 1; */
+    background-image: url("images/index.jpg");
+
+    /* Add the blur effect */
+    filter: blur(2px);
+    -webkit-filter: blur(1px);
+
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-overlay {
+    position: relative;
+}
+
+.bg-overlay:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar section */
+
+
+
+
+body {
+    background-color: white;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: black; */
+    padding: 1rem;
+    margin: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 0;
+    left: 30vw;
+}
+
+.navbar a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.navbar a:hover {
+    color: rgba(235, 101, 5, 0.895);
+}
+
+.navbar a::after {
+    content: "";
+}
+
+.logo {
+    margin-right: 50px;
+
+
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .list {
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #toggler:checked~.menu {
+        max-height: 100%;
+    }
+}
+
+.logo {
+    padding: 1rem;
+    /* background-color: black; */
+    color: rgba(246, 209, 139, 0.838);
+    display: block;
+    align-items: center;
+    align-self: center;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 3rem;
+    position: absolute;
+    width: 40rem;
+    top: 55vh;
+    right: -26vw;
+    height: 10rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo-main {
+    color: rgba(235, 101, 5, 0.895);
+    font-size: 10rem;
+    letter-spacing: 3px;
+    font-family: 'Simonetta', cursive;
+    position: absolute;
+    top: -30vh;
+    left: -20vw;
+    z-index: 1;
+    animation: animate 1.5s;
+}
+
+/* .logo-main:hover {
+    transform: translatey(-2vh);
+} */
+
+.slide {
+    animation: slide 3s;
+}
+
+.ul.bold1 {
+    font-weight: bolder;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(40vh)
+    }
+
+    100% {
+        transform: translateY(0.1vh)
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(40vh)
+    }
+
+    100% {
+        transform: translateX(0vh)
+    }
+}

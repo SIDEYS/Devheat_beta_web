@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gilda+Display&family=Lato:wght@300&family=Open+Sans:wght@300&family=Poppins:wght@100;300;400;500;600;700;800&family=Potta+One&family=Raleway:wght@100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sen:wght@400;700;800&family=Simonetta:ital@1&family=Varela+Round&display=swap');
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+* {
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-image: url("images/menu1.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	/* overflow-y: hidden; */
+}
+
+h2 {
+	text-align: center;
+	margin: 40px auto;
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 2.5rem;
+}
+
+.container {
+	max-width: 500px;
+	width: 80%;
+	float: left;
+	margin: 109px 77px;
+	border: none;
+	padding: 2rem -9rem;
+
+}
+
+fieldset {
+	padding: 20px;
+	margin: 20px 0;
+	border: 2px solid #9b5f16;
+	font-size: 16px;
+
+}
+
+legend {
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+input {
+	width: auto;
+	margin: 10px;
+	padding: 5px;
+	font-size: 18px;
+
+}
+
+h3 {
+	margin: 5px 0;
+}
+
+table td,
+table th {
+	padding: 90px;
+	margin: 0;
+	border: 2px solid #000000;
+}
+
+table tr td:last-child {
+	text-align: right;
+}
+
+ul li {
+	padding: 5px;
+	margin: 10px 0;
+}
+
+
+/* styling of the menu */
+
+.logo {
+	position: absolute;
+	right: 50vw;
+	color: #fff;
+	font-size: 1rem;
+	font-weight: bold;
+	font-family: 'Poppins' sans-serif;
+}
+
+.logo h1 {
+	font-size: 3rem;
+	position: absolute;
+	top: -14vh;
+	left: -10vw;
+}
+
+.logo h1:hover {
+	color: rgba(199, 107, 15, 0.779);
+}
+
+.pInfo {
+	color: #fff;
+	margin-left: 2rem;
+}
+
+.pInfo2 {
+	color: #fff;
+}
+
+.pInfo2,
+h3 {
+	font-size: 1.5rem;
+}
+
+.pInfo,
+h3:hover {
+	color: rgba(225, 117, 9, 0.836);
+}
+
+
+
+.names {
+	font-size: 2rem;
+}
+
+.btn {
+	font-size: 1.5rem;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+	padding: 1px 18px;
+	color: #eee;
+	border: 3px #eee solid;
+	background-color: transparent;
+	border-radius: 12%;
+	position: absolute;
+	bottom: -100vh;
+	left: 40vw;
+}
+
+.btn:hover {
+	background-color: #40474c94;
+}
+
+input[type=text] {
+	width: 90%;
+	padding: 3px 4px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+/* .container-part1 {
+	padding: 1rem 5rem;
+} */

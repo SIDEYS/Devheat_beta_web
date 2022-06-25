@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Menu</h1>
+        </div>
+        <form action="/send" method="post">
+            <div class="container-part1">
+                <div class="part1">
+
+                    <fieldset class="pInfo">
+                        <legend>
+                            <h3>Personal Information</h3>
+                        </legend>
+                        <div class="names">
+                            Full Name: <input type="text" name="name" id="name"> <br>
+                            Email: <input type="text" name="email" id="email"> <br>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="part2">
+                    <fieldset class="pInfo2">
+                        <legend>
+                            <h3 class="title">Menu</h3>
+                        </legend>
+                        Kachori (30Rs): <input type="text" name="kachori" id="Kachori"> <br>
+
+                        Samosa (15Rs): <input type="text" name="samosa" id="Samosa"> <br>
+
+                        Dhokla (40Rs): <input type="text" name="dhokla" id="Dhokla"> <br>
+
+                        Kambrej special (60Rs): <input type="text" name="kambrejSpecial" id="Kambrejspecial"> <br>
+
+                        Vadapav (15Rs): <input type="text" name="vadapav" id="Vadapav"> <br>
+
+                        Khaman (30Rs): <input type="text" name="khaman" id="Khaman"> <br>
+
+                        Jalebi (20Rs): <input type="text" name="jalebi" id="Jalebi"> <br>
+
+                        Fafda (30Rs): <input type="text" name="fafda" id="Fafda"> <br>
+
+                        Khandavi (30Rs): <input type="text" name="khandavi" id="Khandavi"> <br>
+
+                        Surti Locha (40Rs): <input type="text" name="surtilocha" id="SurtiLocha"> <br>
+
+                    </fieldset>
+                </div>
+            </div>
+
+            <button class="btn" type="submit">
+                <h4>Generate bill</h4>
+            </button>
+
+        </form>
+
+        <!-- 
+            <div class="container-part2">
+                <fieldset>
+                    <legend>Your Bill</legend>
+                    <h3>Your Name: <span id="name2"></span></h3>
+                    <h3>Your Email: <span id="email2"></span></h3>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Menu</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="BillStatement"></tbody>
+                </fieldset>
+                <h1>Total Amount(in Rs): <span id="amount"></span></h1>
+            </div>
+       -->
+
+    </div>
+    <script>
+
+        var kachori_price = 30, samosa_price = 15, dhokla_price = 40, kambrej_special_price = 60, vadapav_price = 15, khaman_price = 30, jalebi_price = 20, fafda_price = 30, khandavi_price = 30, surti_locha_price = 40;
+        // Quantity
+        var Kachori_q = 0, samosa_q = 0, dhokla_q = 0, kambrej_special_q = 0, vadapav_q = 0, khaman_q = 0, jalebi_q = 0, fafda_q = 0, khandavi_q = 0, surti_locha_q = 0;
+        //Price Dislay
+        var KachoriPriceshow = "", samosaPriceshow = "", dhoklaPriceshow = "", kambrejspecialPriceshow = "", vadapavPriceshow = "", khamanPriceshow = "", jalebiPriceshow = "", fafdaPriceshow = "", khandaviPriceshow = "", surtilochaPriceshow = "";
+
+        document.getElementById('name').addEventListener("keyup", function () {
+            document.getElementById('name2').innerHTML = this.value;
+        });
+        document.getElementById('email').addEventListener("keyup", function () {
+            document.getElementById('email2').innerHTML = this.value;
+        });
+
+        // Kachori     
+        document.getElementById("Kachori").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                KachoriPriceshow = "";
+                Kachori_q = 0;
+                showBill();
+            }
+            else {
+                Kachori_q = this.value;
+                KachoriPriceshow = "<tr><td>kachori</td><td>Rs. " + kachori_price + "</td><td>" + Kachori_q + "</td><td>" + kachori_price + "x" + Kachori_q + " = " + kachori_price * Kachori_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Samosa
+        document.getElementById("Samosa").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                samosaPriceshow = "";
+                samosa_q = 0;
+                showBill();
+            }
+            else {
+                samosa_q = this.value;
+                samosaPriceshow = "<tr><td>samosa</td><td>Rs. " + samosa_price + "</td><td>" + samosa_q + "</td><td>" + samosa_price + "x" + samosa_q + " = " + samosa_price * samosa_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Dhokla
+        document.getElementById("Dhokla").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                dhoklaPriceshow = "";
+                dhokla_q = 0;
+                showBill();
+            }
+            else {
+                dhokla_q = this.value;
+                dhoklaPriceshow = "<tr><td>dhokla</td><td>Rs. " + dhokla_price + "</td><td>" + dhokla_q + "</td><td>" + dhokla_price + "x" + dhokla_q + " = " + dhokla_price * dhokla_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Kmabrejspecial
+        document.getElementById("Kambrejspecial").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                kambrejspecialPriceshow = "";
+                kambrej_special_q = 0
+                showBill();
+            }
+            else {
+                kambrej_special_q = this.value;
+                kambrejspecialPriceshow = "<tr><td>kambrej special</td><td>Rs. " + kambrej_special_price + "</td><td>" + kambrej_special_q + "</td><td>" + kambrej_special_price + "x" + kambrej_special_q + " = " + kambrej_special_price * kambrej_special_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Vadapav
+        document.getElementById("Vadapav").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                vadapavPriceshow = "";
+                vadapav_q = 0;
+                showBill();
+            }
+            else {
+                vadapav_q = this.value;
+                vadapavPriceshow = "<tr><td>vadapav</td><td>Rs. " + vadapav_price + "</td><td>" + vadapav_q + "</td><td>" + vadapav_price + "x" + vadapav_q + " = " + vadapav_price * vadapav_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        // Khaman
+        document.getElementById("Khaman").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                khamanPriceshow = "";
+                khaman_q = 0;
+                showBill();
+            }
+            else {
+                khaman_q = this.value;
+                khamanPriceshow = "<tr><td>khaman</td><td>Rs. " + khaman_price + "</td><td>" + khaman_q + "</td><td>" + khaman_price + "x" + khaman_q + " = " + khaman_price * khaman_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Jalebi
+
+        document.getElementById("Jalebi").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                jalebiPriceshow = "";
+                jalebi_q = 0;
+                showBill();
+            }
+            else {
+                jalebi_q = this.value;
+                jalebiPriceshow = "<tr><td>jalebi</td><td>Rs. " + jalebi_price + "</td><td>" + jalebi_q + "</td><td>" + jalebi_price + "x" + jalebi_q + " = " + jalebi_price * jalebi_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Fafda
+
+        document.getElementById("Fafda").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                fafdaPriceshow = "";
+                showBill();
+            }
+            else {
+                fafda_q = this.value;
+                fafdaPriceshow = "<tr><td>fafda</td><td>Rs. " + fafda_price + "</td><td>" + fafda_q + "</td><td>" + fafda_price + "x" + fafda_q + " = " + fafda_price * fafda_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //Khandavi
+        document.getElementById("Khandavi").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                khandaviPriceshow = "";
+                khandavi_q = 0;
+                showBill();
+            }
+            else {
+                khandavi_q = this.value;
+                khandaviPriceshow = "<tr><td>khandavi</td><td>Rs. " + khandavi_price + "</td><td>" + khandavi_q + "</td><td>" + khandavi_price + "x" + khandavi_q + " = " + khandavi_price * khandavi_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+        //SurtiLocha
+        document.getElementById("SurtiLocha").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                surtilochaPriceshow = "";
+                surti_locha_q = 0;
+                showBill();
+            }
+            else {
+                surti_locha_q = this.value;
+                surtilochaPriceshow = "<tr><td>surti locha</td><td>Rs. " + surti_locha_price + "</td><td>" + surti_locha_q + "</td><td>" + surti_locha_price + "x" + surti_locha_q + " = " + surti_locha_price * surti_locha_q + "</td></tr>";
+                showBill();
+            }
+        });
+
+
+        //    Billing function
+        function showBill() {
+            document.getElementById("BillStatement").innerHTML = KachoriPriceshow + samosaPriceshow + dhoklaPriceshow +
+                kambrejspecialPriceshow + vadapavPriceshow + khamanPriceshow + jalebiPriceshow + fafdaPriceshow + khandaviPriceshow + surtilochaPriceshow;
+            document.getElementById("amount").innerHTML = (kachori_price * Kachori_q) + (samosa_price * samosa_q) + (dhokla_price * dhokla_q) + (kambrej_special_price * kambrej_special_q) + (vadapav_price * vadapav_q) + (khaman_price * khaman_q) + (jalebi_price * jalebi_q) + (fafda_price * fafda_q) + (khandavi_price * khandavi_q) + (surti_locha_price * surti_locha_q);
+        }
+    </script>
+</body>
+
+</html>
